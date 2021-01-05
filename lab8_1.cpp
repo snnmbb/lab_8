@@ -6,7 +6,7 @@ int main()
 {	
 	
 	double loan,rate,paid,PrevBalance,Interest,Total,Payment,NewBalance;
-	int year=1;
+	int year=0;
 
 	cout << "Enter initial loan: ";
 	cin>>loan;
@@ -34,6 +34,7 @@ int main()
 	{	
 		if(paid>loan)
 		{	
+			year++;
 			cout << fixed << setprecision(2); 
 			cout << setw(13) << left << year;
 			cout << setw(13) << left << PrevBalance;
@@ -58,7 +59,7 @@ int main()
 			cout << setw(13) << left << Interest;
 			Total = PrevBalance+Interest;
 
-			if(Total>=100)
+			if(Total>=Payment)
 			{
 				cout << setw(13) << left << Total;
 				Payment = paid;
